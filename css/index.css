@@ -1,0 +1,18 @@
+.contact-point{
+    border: 1px red solid;
+    height: 91vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    text-align: center;
+    font-size: 3.7vw;
+    width: 40%;
+}
+.sub-title{
+    padding-top: 5%;
+    font-size: 1.2vw;
+}
+/* changed something */

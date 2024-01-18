@@ -1,0 +1,85 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #101010;
+}
+
+/* NAVIGATION BAR */
+.navbar{
+    display: flex;
+    flex-direction: row;
+    background-color: #000000;
+    width: 100vw;
+    height: 9vh;
+}
+.navbar a, .navbar div{
+    color: white;
+    text-decoration: none;
+    font-family: 'Super Legend Boy';
+}
+.logo{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.7vw;
+    padding: 0% 3%;
+}
+.navbar *:hover{
+    color: #7e7e7e;
+    transition: 0.4s;
+    cursor: pointer;
+}
+.not-logo{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    flex-grow: 1;
+    font-size: 1vw;
+}
+.not-logo > *{
+    margin: 0% 2%;
+}
+.github-icon{
+    height: 70%;
+    object-fit: contain;
+}
+.github-icon img{
+    height: 100%;
+}
+.github-icon img:hover{
+    filter: brightness(0.5);
+    transition: 0.4s;
+}
+
+/* NAVIGATION BAR */
+/* FONTS */
+.title, .sub-title, .first-tier-header, .second-tier-header, .text{
+    color: white;
+}
+.title, .sub-title{
+    font-family: 'Joystix';
+}
+.first-tier-header, .second-tier-header{
+    font-family: 'Press Start 2P';
+}
+.first-tier-header{
+    text-decoration: underline;
+    text-align: center;
+    font-size: 2vw;
+}
+.text{
+    font-family: sans-serif;
+}
+
+/* NEED TO FIX */
+
+/* .text{
+    font-family: 'Atlantis Legends';
+} */
