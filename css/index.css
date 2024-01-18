@@ -1,5 +1,4 @@
 .contact-point{
-    border: 1px red solid;
     height: 91vh;
     display: flex;
     flex-direction: column;
@@ -15,4 +14,27 @@
     padding-top: 5%;
     font-size: 1.2vw;
 }
-/* changed something */
+.games-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    background-color: #101010;
+    width: 85%;
+    border: 1px red solid;
+}
+.image-container{
+    border: 1px solid pink;
+    width: 43%;
+    height: 50vh;
+    object-fit: fill;
+}
+.image-container img{
+    height: 100%;
+}
+
+.black{
+    color: black;
+}

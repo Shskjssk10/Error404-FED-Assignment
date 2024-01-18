@@ -74,12 +74,9 @@ body{
     text-align: center;
     font-size: 2vw;
 }
+
+/* NEED TO FIX */
 .text{
     font-family: sans-serif;
 }
 
-/* NEED TO FIX */
-
-/* .text{
-    font-family: 'Atlantis Legends';
-} */
