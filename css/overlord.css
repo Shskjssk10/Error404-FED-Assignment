@@ -1,82 +1,125 @@
-*{
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
+:root {
+  --black: #000000;
 }
-body{
-    margin: auto;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #101010;
+*,
+*::before,
+*::after {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }
-
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #101010;
+  overflow-x: hidden;
+}
 /* NAVIGATION BAR */
-.navbar{
-    display: flex;
-    flex-direction: row;
-    background-color: #000000;
-    width: 100vw;
-    height: 9vh;
+.navbar {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--black);
+  width: 100vw;
+  height: 9vh;
 }
-.navbar a, .navbar div{
-    color: white;
-    text-decoration: none;
-    font-family: 'Super Legend Boy';
+.navbar a,
+.navbar div {
+  color: white;
+  text-decoration: none;
+  font-family: "Super Legend Boy";
 }
-.logo{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    font-size: 1.7vw;
-    padding: 0% 3%;
+.logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 1.7vw;
+  padding: 0% 3%;
 }
-.navbar *:hover{
-    color: #7e7e7e;
-    transition: 0.4s;
-    cursor: pointer;
+.navbar *:hover {
+  color: #7e7e7e;
+  transition: 0.4s;
+  cursor: pointer;
 }
-.not-logo{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: row-reverse;
-    flex-grow: 1;
-    font-size: 1vw;
+.not-logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  flex-grow: 1;
+  font-size: 1vw;
 }
-.not-logo > *{
-    margin: 0% 2%;
+.not-logo > * {
+  margin: 0% 3%;
 }
-.github-icon{
-    height: 70%;
-    object-fit: contain;
+.github-icon {
+  height: 70%;
+  object-fit: contain;
 }
-.github-icon img{
-    height: 100%;
+.github-icon img {
+  height: 100%;
 }
-.github-icon img:hover{
-    filter: brightness(0.5);
-    transition: 0.4s;
+.github-icon img:hover {
+  filter: brightness(0.5);
+  transition: 0.4s;
 }
 
 /* NAVIGATION BAR */
 /* FONTS */
-.title, .sub-title, .first-tier-header, .second-tier-header, .text{
-    color: white;
+@font-face {
+  font-family: "Atlantis International";
+  src: url("../Font/AtlantisInternational-jen0.ttf");
 }
-.title, .sub-title{
-    font-family: 'Joystix';
+.title,
+.sub-title,
+.first-tier-header,
+.second-tier-header,
+.text {
+  color: white;
 }
-.first-tier-header, .second-tier-header{
-    font-family: 'Press Start 2P';
+.title,
+.sub-title {
+  font-family: "Joystix";
 }
-.first-tier-header{
-    text-decoration: underline;
-    text-align: center;
-    font-size: 2vw;
+.first-tier-header,
+.second-tier-header {
+  font-family: "Press Start 2P";
 }
-
-/* NEED TO FIX */
-.text{
-    font-family: sans-serif;
+.first-tier-header {
+  text-decoration: underline;
+  text-align: center;
+  font-size: 2vw;
 }
-
+.text {
+  font-family: "Atlantis International";
+  line-height: 1em;
+}
+.button-text {
+  font-family: "Joystix";
+  color: var(--black);
+}
+/* FONTS */
+/* FOOTER */
+footer {
+  background: var(--black);
+  margin-top: 2%;
+  height: 20%;
+}
+/* BUTTON */
+a {
+  text-decoration: none;
+}
+.button {
+  background-color: red;
+  font-size: 1.2vw;
+  padding: 2vh 2.4vw;
+  width: var(--box-width);
+  height: var(--box-height);
+  box-shadow: 4px 4px 0 0 white;
+}
+.button:hover {
+  box-shadow: none;
+  color: white;
+  transform: translateX(4px) translateY(4px);
+}
+/* BUTTON  */

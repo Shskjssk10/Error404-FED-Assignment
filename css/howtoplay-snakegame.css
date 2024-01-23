@@ -1,0 +1,109 @@
+.contact-point-section{
+    height: 91vh;
+    width: 100%;
+}
+.header-image-container{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.header-image-container img{
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.content{
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.translucent-cover{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: inherit   ;
+    background-color: #1C1A2C;
+    opacity: .7;
+    z-index: 1;
+}
+.header-text-container{
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    font-size: 3.7vw;
+    text-align: center;
+}
+.sub-title{
+    margin-top: 4%;
+    font-size: 2.4vw;
+}
+.second-tier-header{
+    font-size: 1.7vw;
+}
+.text{
+    font-size: 2.5vw;
+}
+.subsection{
+    margin-top: 3%;
+    width: 80%;
+}
+.subsection > *{
+    padding: 1% 0%;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.instructions-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 2%;
+}
+.text-container{
+    width: 50%;
+}
+.image-container{
+    width: 50%;
+}
+.image-container img{
+    width: 100%;
+    object-fit: fill;
+    border: white 1px solid;
+}
+.text-container > *{
+    padding: 2% 2% 2% 0%;
+}
+.ready-player-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+    height: 100vh;
+}
+.ready-player-section > *{
+    margin-top: 4%;
+}
+.ready-player-text{
+    font-family: 'Joystix';
+    color: white;
+    font-size: 3.5vw;
+}

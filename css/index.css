@@ -1,10 +1,4 @@
-.contact-point{
-    height: 91vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+/* Font Related */
 .title{
     text-align: center;
     font-size: 3.7vw;
@@ -14,6 +8,14 @@
     padding-top: 5%;
     font-size: 1.2vw;
 }
+/* Font Related */
+.contact-point{
+    height: 91vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .games-section{
     display: flex;
     flex-direction: column;
@@ -22,19 +24,65 @@
 }
 .card{
     background-color: #101010;
-    width: 85%;
+    width: 70%;
     border: 1px red solid;
 }
 .image-container{
-    border: 1px solid pink;
-    width: 43%;
+    width: 40%;
     height: 50vh;
-    object-fit: fill;
+    object-fit: contain;
 }
 .image-container img{
     height: 100%;
+    width: 100%;
 }
-
-.black{
-    color: black;
+.card-body{
+    padding-left: 10%;
+    padding-top: 8%;
+}
+a{
+    text-decoration: none;
+}
+.second-tier-header{
+    font-size: 2vw;
+}
+.text{
+    font-size: 2vw;
+}
+.how-to-text{
+    margin-bottom: 8%;
+}
+.how-to-text:hover{
+    color: #7e7e7e;
+    transition: 0.4s;
+    cursor: pointer;
+}
+.review-section{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    align-items: center;
+}
+.review-text{
+    margin-top: 2%;
+    width: 60%;
+    text-align: center;
+    font-size: 2.3vw;
+}
+.feedback-form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3%;
+    width: 60%;
+}
+.text-area{
+    margin-top: 1%;
+    font-family: 'Atlantis International';
+    font-size: 1.7vw;
+    padding: 2%;
+    height: 50vh;
+}
+.submit-button{
+    border: none;
+    margin-top: 2%;
 }
