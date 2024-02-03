@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="API-leaderboard.css">
+    <script src="API-leaderboard.js" defer></script>
+</head>
+
+<body>
+    <div class="form">
+        <form id="field">
+            <div class="form-group">
+                <label for="Name">Name</label>
+                <input type="text" id="name" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="Name">Score</label>
+                <input type="text" id="score" class="form-control">
+            </div>
+            <input type="submit" value="Submit" class="btn btn-primary" id="submit">
+            <small style="margin-top: 20px;">For api implementation checkpoint just to show that leaderboard works with
+                sorting logic
+                behind, for the actual there will be no fields.</small>
+        </form>
+    </div>
+
+    <div class="container mt-5">
+        <h2>Leaderboard</h2>
+        <table class="table table-hover" id="Leaderboard">
+            <thead>
+                <th>#</th>
+                <th>Name</th>
+                <th>Score</th>
+            </thead>
+            <tbody id="leaderboard"></tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
