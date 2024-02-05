@@ -74,11 +74,17 @@ a{
     margin-top: 3%;
     width: 60%;
 }
+input{
+    margin-top: 1%;
+    font-family: 'Atlantis International';
+    height: 3vh;
+    padding: 2%;
+}
 .text-area{
     margin-top: 1%;
     font-family: 'Atlantis International';
     font-size: 1.7vw;
-    padding: 2%;
+    padding: 1% 2%;
     height: 50vh;
 }
 .submit-button{
