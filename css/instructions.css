@@ -58,39 +58,27 @@
 .text{
     font-size: 2.5vw;
 }
-.subsection{
-    margin-top: 3%;
-    width: 80%;
-}
-.subsection > *{
-    padding: 1% 0%;
-}
-.row{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.instructions-section{
+.container-fluid{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 2%;
+}
+.row{
+    margin: 2% 0%;
+    width: 85%;
+}
+.row > *{
+    margin: 2% 0%;
 }
 .text-container{
-    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 4%;
 }
-.image-container{
-    width: 50%;
-}
-.image-container img{
-    width: 100%;
-    object-fit: fill;
-    border: white 1px solid;
-}
-.text-container > *{
-    padding: 2% 2% 2% 0%;
-}
+
 .ready-player-section{
     display: flex;
     flex-direction: column;
