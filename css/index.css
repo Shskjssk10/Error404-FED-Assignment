@@ -9,6 +9,7 @@
     font-size: 1.2vw;
 }
 /* Font Related */
+
 .contact-point{
     height: 91vh;
     display: flex;
@@ -22,23 +23,20 @@
     justify-content: center;
     align-items: center;
 }
-.card{
-    background-color: #101010;
+.row{
     width: 70%;
-    border: 1px red solid;
+    margin: 3% 0%;
 }
 .image-container{
-    width: 40%;
-    height: 50vh;
-    object-fit: contain;
-}
-.image-container img{
     height: 100%;
     width: 100%;
 }
-.card-body{
-    padding-left: 10%;
-    padding-top: 8%;
+.image-container > img{
+    height: 100%;
+    width: 100%;
+}
+.text-container{
+    padding: 2%;    
 }
 a{
     text-decoration: none;
@@ -57,6 +55,7 @@ a{
     transition: 0.4s;
     cursor: pointer;
 }
+
 .review-section{
     display: flex;
     flex-direction: column;
