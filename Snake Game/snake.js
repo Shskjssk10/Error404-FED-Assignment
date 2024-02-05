@@ -103,7 +103,7 @@ function drawScoreboard() {
 
 // Function to draw the food
 function drawFood() {
-  context.fillStyle = "red";
+  context.fillStyle = "white";
   context.fillRect(snake.foodX * block, snake.foodY * block, block, block);
 }
 
