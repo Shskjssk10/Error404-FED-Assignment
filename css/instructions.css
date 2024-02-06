@@ -78,7 +78,15 @@
     justify-content: center;
     padding-right: 4%;
 }
-
+.image-container{
+    height: 100%;
+    width: 100%;
+}
+.image-container img{
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
 .ready-player-section{
     display: flex;
     flex-direction: column;
