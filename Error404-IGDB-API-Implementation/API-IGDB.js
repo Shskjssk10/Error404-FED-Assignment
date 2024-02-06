@@ -37,16 +37,19 @@ fetch(authUrl, {
       .then((response) => response.json())
       .then((response) => {
         console.log(response);
+        // Clear previous content
+        cardContainer.innerHTML = "";
+
         for (var i = 0; i < response.length; i++) {
           const game = response[i];
+
           // Create Bootstrap card dynamically
           const cardDiv = document.createElement("div");
-          cardDiv.classList.add("card");
-          cardDiv.style.width = "18rem";
+          cardDiv.classList.add("col-md-4", "mb-4"); // Bootstrap grid class and margin bottom class
 
           // Create card body
           const cardBodyDiv = document.createElement("div");
-          cardBodyDiv.classList.add("card-body");
+          cardBodyDiv.classList.add("card", "h-100");
 
           // Assign title and content from response
           const title = document.createElement("h5");
@@ -69,9 +72,12 @@ fetch(authUrl, {
           // Append card body to card
           cardDiv.appendChild(cardBodyDiv);
 
-          // Append card to the DOM
-          document.body.appendChild(cardDiv);
+          // Append card to the card container
+          cardContainer.appendChild(cardDiv);
         }
+
+        // Add Bootstrap classes for spacing around
+        cardContainer.classList.add("justify-content-around", "d-flex");
       })
       .catch((err) => {
         console.error(err);
