@@ -74,15 +74,18 @@ a{
     margin-top: 3%;
     width: 60%;
 }
+#name, #feedback{
+    color: black;
+}
 input{
     margin-top: 1%;
     font-family: 'Atlantis International';
-    padding: 2%;
+    padding: 1%;
 }
 .text-area{
     margin-top: 1%;
     font-family: 'Atlantis International';
-    padding: 1% 2%;
+    padding: 1%;
     height: 50vh;
 }
 .submit-button{
