@@ -26,11 +26,11 @@ body {
 .logo {
     color: white;
     font-family: "Super Legend Boy";
-    font-size: 1.5rem;
+    font-size: 1.7rem;
 }
 .logo:hover{
     transition: 0.4s;
-    color: grey;
+    color: rgb(81, 81, 81);
 }
 .navbar ul {
     display: flex;
@@ -83,6 +83,22 @@ body {
     display: block;
     opacity: 1;
     visibility: visible;
+}
+.github-container{
+    padding: 0 !important; 
+    height: 5.5vh;
+    width: 5vw;
+}
+.image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.image-container img{
+    height: 100%;
 }
 @media (max-width: 1100px){
     .navbar ul li{
