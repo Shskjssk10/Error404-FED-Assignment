@@ -1,9 +1,5 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const dropdownItems = document.querySelectorAll('.navbar ul li');
-
-    dropdownItems.forEach(item => {
-        item.addEventListener('click', function () {
-            this.classList.toggle('active');
-        });
-    });
-});
+let menuToggle = document.querySelector('.menu-toggle');
+let header = document.querySelector('header');
+menuToggle.onclick = function(){
+    header.classList.toggle('active');
+}
