@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
           // Sort by score in descending order
           return b.score - a.score;
         });
+        response = response.slice(0, 10);
         let content = "";
         let count = 1;
         for (var i = 0; i < response.length && i < limit; i++) {

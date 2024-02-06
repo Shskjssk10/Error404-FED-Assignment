@@ -28,7 +28,7 @@ app.post("/getGames", async (req, res) => {
         "Client-ID": clientID,
         Authorization: `Bearer ${accessToken}`,
       },
-      body: "fields name,summary,url; limit 30;",
+      body: "fields name,summary,url; limit 498;",
     });
 
     if (response.ok) {
