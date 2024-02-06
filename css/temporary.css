@@ -20,13 +20,20 @@ body {
 
 .navbar {
     background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    color: white;
 }
 
 .navbar ul {
     display: flex;
-    justify-content: flex-end;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
 }
 
@@ -52,28 +59,25 @@ body {
     color: #fff;
 }
 
-/* Add a class selector for the dropdown */
 .navbar ul li .dropdown {
-    display: none; /* Hide the dropdown initially */
+    display: none;
     position: absolute;
     background: #000;
     top: 45px;
     left: 0;
-    width: 100%; /* Take up 100% width */
+    width: 100%;
     transition: 0.5s;
     opacity: 0;
     visibility: hidden;
-    padding-top: 10px; /* Add padding to separate the dropdown from the parent item */
+    padding-top: 10px;
 }
 
-/* Add styles for the visible dropdown when hovering */
 .navbar ul li:hover .dropdown {
     display: block;
     opacity: 1;
     visibility: visible;
 }
 
-/* Style for active state (clicked) */
 .navbar ul li.active .dropdown {
     display: block;
     opacity: 1;
@@ -81,7 +85,19 @@ body {
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .logo {
+        order: 1;
+        margin-bottom: 10px;
+    }
+
     .navbar ul {
+        order: 2;
         display: block;
         width: 100%;
     }
@@ -89,14 +105,15 @@ body {
     .navbar ul li {
         display: block;
         width: 100%;
+        text-align: center;
     }
 
     .navbar ul li .dropdown {
         width: 100%;
-        position: static; /* Change position to static */
-        padding-top: 10px; /* Add padding to separate the dropdown from the parent item */
+        position: static;
+        padding-top: 10px;
         z-index: 1;
-        display: none; /* Hide the dropdown initially */
+        display: none;
     }
 
     .navbar ul li.active .dropdown {
