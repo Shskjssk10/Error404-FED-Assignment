@@ -103,12 +103,17 @@
     color: white;
     font-size: 3.5vw;
 }
+@media (max-width: 1000px){
+    .contact-point-section{
+        height: auto;
+    }
+}
 @media (max-width: 700px){
     .title{
-        font-size: 5vw;
+        font-size: 4.5vw;
     }
     .sub-title{
-        font-size: 1.5vw;
+        font-size: 2.3vw;
     }
     .first-tier-header{
         font-size: 3.1vw;
