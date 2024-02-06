@@ -19,13 +19,33 @@
     <script src="https://kit.fontawesome.com/15369d822f.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="navbar">
+    <header>
         <a class="logo" href="index.html">Error404</a>
-        <div class="not-logo">
-            <a href="https://github.com/Shskjssk10/Error404-FED-Assignment" class="github-icon" target="_blank"><img src="../Images/github-icon.png"></a>
-            <div class="games-nav">Games</div>
-        </div>
-    </nav>
+        <div class="menu-toggle"></div>
+        <nav>
+            <ul>
+                <li>Instructions
+                    <ul>
+                        <li><a href="howtoplay-snakegame.html">Snake Game</a></li>
+                        <li><a href="howtoplay-ponggame.html">Pong Game</a></li>
+                    </ul>
+                </li>
+                <li>Play Now
+                    <ul>
+                        <li><a href="snakegame.html">Snake Game</a></li>
+                        <li><a href="ponggame.html">Pong Game</a></li>
+                    </ul>
+                </li>
+                <li class="github-container">
+                    <div class="image-container">
+                        <a href="https://github.com/Shskjssk10/Error404-FED-Assignment" target="_blank">
+                            <img src="Images/github-icon.png" alt="">
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+      </header>
     <section class="game">
         <div class="wrapper">
             <div class="game-details">
@@ -55,7 +75,7 @@
         </div>
     </section>
     
-
+    <script src="/js/overlord.js"></script>
     <script src="/js/snakegame.js"></script>
 </body>
 </html>
