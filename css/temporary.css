@@ -1,0 +1,107 @@
+:root {
+    --black: #000000;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #101010;
+    overflow-x: hidden;
+}
+
+.navbar {
+    background-color: black;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.navbar ul li {
+    list-style: none;
+    position: relative;
+    padding: 10px 15px;
+    transition: 0.5s;
+    box-sizing: border-box;
+}
+
+.navbar ul li:hover {
+    background: #2196f3;
+}
+
+.navbar ul li:last-child {
+    border-right: none;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    padding: 0 20px;
+    color: #fff;
+}
+
+/* Add a class selector for the dropdown */
+.navbar ul li .dropdown {
+    display: none; /* Hide the dropdown initially */
+    position: absolute;
+    background: #000;
+    top: 45px;
+    left: 0;
+    width: 100%; /* Take up 100% width */
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    padding-top: 10px; /* Add padding to separate the dropdown from the parent item */
+}
+
+/* Add styles for the visible dropdown when hovering */
+.navbar ul li:hover .dropdown {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Style for active state (clicked) */
+.navbar ul li.active .dropdown {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        display: block;
+        width: 100%;
+    }
+
+    .navbar ul li {
+        display: block;
+        width: 100%;
+    }
+
+    .navbar ul li .dropdown {
+        width: 100%;
+        position: static; /* Change position to static */
+        padding-top: 10px; /* Add padding to separate the dropdown from the parent item */
+        z-index: 1;
+        display: none; /* Hide the dropdown initially */
+    }
+
+    .navbar ul li.active .dropdown {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+}
