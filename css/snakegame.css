@@ -40,12 +40,11 @@ body{
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template: repeat(31, 1fr) / repeat(31, 1fr);
+    grid-template: repeat(29, 1fr) / repeat(31, 1fr);
     background-color: black;
 }
 .play-board .food{
     background: white;
-    border-radius: 50%;
 
 }
 .play-board .snake{

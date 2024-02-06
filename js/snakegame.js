@@ -15,7 +15,7 @@ let highScore = localStorage.getItem("high-score") || 0;
 highScoreElement.innerHTML = `High Score: ${highScore}`;
 
 const changeFoodPosition = () => {
-    foodXCoords = Math.floor(Math.random() * 31) + 1;
+    foodXCoords = Math.floor(Math.random() * 29) + 1;
     foodYCoords = Math.floor(Math.random() * 31) + 1;
 }
 
@@ -75,7 +75,7 @@ const initGame = () => {
     snakeXCoords += snakeVelocityX;
     snakeYCoords += snakeVelocityY;
 
-    if (snakeXCoords <= 0 || snakeXCoords > 31 || snakeYCoords <= 0 || snakeYCoords > 31){
+    if (snakeXCoords <= 0 || snakeXCoords > 29 || snakeYCoords <= 0 || snakeYCoords > 31){
         gameOver = true;
     }
 
