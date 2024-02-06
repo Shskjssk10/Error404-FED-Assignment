@@ -1,8 +1,9 @@
-//Snake Food 
 const playBoard = document.querySelector(".play-board");
 const scoreElement = document.querySelector(".score");
 const highScoreElement = document.querySelector(".high-score");
 const controls = document.querySelectorAll(".controls i");
+const coverPrompt = document.querySelector(".cover");
+const submitButton = document.querySelector(".submit-button");
 
 let gameOver = false;
 let foodXCoords, foodYCoords;
@@ -14,37 +15,68 @@ let score = 0;
 let highScore = localStorage.getItem("high-score") || 0;
 highScoreElement.innerHTML = `High Score: ${highScore}`;
 
+let usernameSubmitted = false;
+
 const changeFoodPosition = () => {
-    foodXCoords = Math.floor(Math.random() * 29) + 1;
-    foodYCoords = Math.floor(Math.random() * 31) + 1;
+    foodXCoords = Math.floor(Math.random() * 31) + 1;
+    foodYCoords = Math.floor(Math.random() * 29) + 1;
 }
 
 const handleGameOver = () => {
-    clearInterval(setIntervalId);
-    alert("Game over! Press OK to replay!");
-    location.reload();
+    if (!gameOver) {
+        gameOver = true;
+        alert("Game over! Press OK to replay!");
+        clearInterval(setIntervalId);
+        resetGame();
+        startGame();
+        gameOver = false;
+    }
 }
 
 const changeDirection = (e) => {
-    if ((e.key === "ArrowUp" || e.key ==="w") && snakeVelocityY !== 1){
+    if (gameOver || !usernameSubmitted) {
+        return;
+    }
+
+    if ((e.key === "ArrowUp" || e.key === "w") && snakeVelocityY !== 1) {
         snakeVelocityX = 0;
         snakeVelocityY = -1;
-    } else if ((e.key === "ArrowDown" || e.key === "s") && snakeVelocityY !== -1){
+    } else if ((e.key === "ArrowDown" || e.key === "s") && snakeVelocityY !== -1) {
         snakeVelocityX = 0;
         snakeVelocityY = 1;
-    } else if ((e.key === "ArrowRight" || e.key === "d") && snakeVelocityX !== -1){
+    } else if ((e.key === "ArrowRight" || e.key === "d") && snakeVelocityX !== -1) {
         snakeVelocityX = 1;
         snakeVelocityY = 0;
-    } else if ((e.key === "ArrowLeft" || e.key === "a") && snakeVelocityX !== 1){
+    } else if ((e.key === "ArrowLeft" || e.key === "a") && snakeVelocityX !== 1) {
         snakeVelocityX = -1;
         snakeVelocityY = 0;
     }
-    initGame();
 }
 
 controls.forEach(key => {
-    key.addEventListener("click", () => changeDirection({key : key.dataset.key}))
+    key.addEventListener("click", () => changeDirection({ key: key.dataset.key }))
 })
+
+const resetGame = () => {
+    snakeXCoords = 16;
+    snakeYCoords = 16;
+    snakeVelocityX = 0;
+    snakeVelocityY = 0;
+    snakeBody = [];
+    score = 0;
+    changeFoodPosition();
+    updateScoreDisplay();
+}
+
+const updateScoreDisplay = () => {
+    scoreElement.innerHTML = `Score: ${score}`;
+    localStorage.setItem("high-score", highScore);
+    highScoreElement.innerHTML = `High Score: ${highScore}`;
+}
+
+const startGame = () => {
+    setIntervalId = setInterval(initGame, 125);
+}
 
 const initGame = () => {
     if (gameOver) return handleGameOver();
@@ -52,43 +84,54 @@ const initGame = () => {
     let htmlMarkup = `<div class="food" style="grid-area: ${foodYCoords} / ${foodXCoords}"></div>`;
     htmlMarkup += `<div class="snake" style="grid-area: ${snakeYCoords} / ${snakeXCoords}"></div>`;
 
-    // Checks to see if the snake has hit the food
-    if (snakeXCoords === foodXCoords && snakeYCoords === foodYCoords){
+    if (snakeXCoords === foodXCoords && snakeYCoords === foodYCoords) {
         changeFoodPosition();
-        snakeBody.push([foodXCoords, foodYCoords]); //Pushes food position to snake's body.
+        snakeBody.push([foodXCoords, foodYCoords]);
         score++;
         highScore = score > highScore ? score : highScore;
 
-        scoreElement.innerHTML = `Score: ${score}`;
-        localStorage.setItem("high-score", highScore);
-        highScoreElement.innerHTML = `High Score: ${highScore}`
+        updateScoreDisplay();
     }
 
-    for (let i = snakeBody.length -1; i > 0; i--){
-        // Shifts the values of elements in snake body by one forward
-        snakeBody[i] = snakeBody[i-1];
+    for (let i = snakeBody.length - 1; i > 0; i--) {
+        snakeBody[i] = snakeBody[i - 1];
     }
 
     snakeBody[0] = [snakeXCoords, snakeYCoords];
 
-    // Updates snake's direction
     snakeXCoords += snakeVelocityX;
     snakeYCoords += snakeVelocityY;
 
-    if (snakeXCoords <= 0 || snakeXCoords > 29 || snakeYCoords <= 0 || snakeYCoords > 31){
-        gameOver = true;
+    if (snakeXCoords <= 0 || snakeXCoords > 31 || snakeYCoords <= 0 || snakeYCoords > 29) {
+        handleGameOver();
     }
 
-    for (let i = 0; i < snakeBody.length; i++){
-        // Adds a div for each part of the snake's body.
+    for (let i = 0; i < snakeBody.length; i++) {
         htmlMarkup += `<div class="snake" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}"></div>`;
-        // Checks if snake hits its own body
-        if (i !== 0 && snakeBody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[i][0]){
-            gameOver = true;
+        if (i !== 0 && snakeBody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[i][0]) {
+            handleGameOver();
         }
     }
     playBoard.innerHTML = htmlMarkup;
 }
+
+const handleCoverDisappearance = () => {
+    usernameSubmitted = true;
+    coverPrompt.style.display = "none";
+    resetGame();
+    startGame();
+}
+
+submitButton.addEventListener("click", () => {
+    handleCoverDisappearance();
+});
+
+document.addEventListener("keydown", (e) => {
+    if (!usernameSubmitted && e.key === "Enter") {
+        handleCoverDisappearance();
+    }
+});
+
 changeFoodPosition();
-setIntervalId = setInterval(initGame, 125);
-document.addEventListener("keydown", changeDirection)
+startGame();
+document.addEventListener("keydown", changeDirection);
