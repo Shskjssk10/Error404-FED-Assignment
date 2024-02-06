@@ -35,8 +35,43 @@ fetch(authUrl, {
       }),
     })
       .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
+      .then((response) => {
+        console.log(response);
+        for (var i = 0; i < response.length; i++) {
+          const game = response[i];
+          // Create Bootstrap card dynamically
+          const cardDiv = document.createElement("div");
+          cardDiv.classList.add("card");
+          cardDiv.style.width = "18rem";
+
+          // Create card body
+          const cardBodyDiv = document.createElement("div");
+          cardBodyDiv.classList.add("card-body");
+
+          // Assign title and content from response
+          const title = document.createElement("h5");
+          title.classList.add("card-title");
+          title.textContent = game.name; // Assuming response has a 'title' property
+          cardBodyDiv.appendChild(title);
+
+          const content = document.createElement("p");
+          content.classList.add("card-text");
+          content.textContent = game.summary; // Assuming response has a 'content' property
+          cardBodyDiv.appendChild(content);
+
+          // Create a button
+          const button = document.createElement("a");
+          button.href = game.url;
+          button.classList.add("btn", "btn-primary");
+          button.textContent = "Find Out More";
+          cardBodyDiv.appendChild(button);
+
+          // Append card body to card
+          cardDiv.appendChild(cardBodyDiv);
+
+          // Append card to the DOM
+          document.body.appendChild(cardDiv);
+        }
       })
       .catch((err) => {
         console.error(err);
