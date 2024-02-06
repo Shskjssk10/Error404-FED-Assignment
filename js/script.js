@@ -4,10 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("submit").addEventListener("click", function (e) {
     e.preventDefault();
 
-    let name = document.getElementById("name").value;
-    let feedback = document.getElementById("feedback").value;
-    console.log(name);
-    console.log(feedback);
+    let name = document.getElementById("name").value.trim();
+    let feedback = document.getElementById("feedback").value.trim();
+    console.log(`User ${name} has some feedbacks "${feedback}"`);
 
     let jsonData = {
       name: name,
@@ -26,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "x-apikey": APIKEY,
         "cache-control": "no-cache",
       },
-      body: JSON.stringify(jsonData), // Changed jsondata to jsonData
+      body: JSON.stringify(jsonData),
     };
 
     fetch(
