@@ -27,11 +27,12 @@
     width: 70%;
     margin: 3% 0%;
 }
-.image-container{
+.image-containerr{
+    border: 1px solid white;
     height: 100%;
     width: 100%;
 }
-.image-container > img{
+.image-containerr > img{
     height: 100%;
     width: 100%;
 }
