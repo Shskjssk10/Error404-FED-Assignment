@@ -52,16 +52,10 @@ const changeDirection = (e) => {
   if (e.key === "w" && snakeVelocityY !== 1) {
     snakeVelocityX = 0;
     snakeVelocityY = -1;
-  } else if (
-    e.key === "s" &&
-    snakeVelocityY !== -1
-  ) {
+  } else if (e.key === "s" && snakeVelocityY !== -1) {
     snakeVelocityX = 0;
     snakeVelocityY = 1;
-  } else if (
-    e.key === "d" &&
-    snakeVelocityX !== -1
-  ) {
+  } else if (e.key === "d" && snakeVelocityX !== -1) {
     snakeVelocityX = 1;
     snakeVelocityY = 0;
   } else if (e.key === "a" && snakeVelocityX !== 1) {
@@ -151,7 +145,6 @@ const handleCoverDisappearance = () => {
   coverPrompt.style.display = "none";
   gameSection.style.display = "flex";
   document.body.style.overflowY = "scroll";
-  console.log("hello");
   resetGame();
   startGame();
 };
