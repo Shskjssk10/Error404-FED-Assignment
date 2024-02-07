@@ -1,18 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
   const APIKEY = "65b0b8899eb5badebb7fa256";
-  console.log("DOM");
-  let highScore = parseInt(localStorage.getItem("high-score")) || 0;
-  console.log(typeof highScore);
-  console.log(highScore);
+  getData();
+
   document.getElementById("submit").addEventListener("click", function (e) {
     e.preventDefault();
 
-    let name = document.getElementById("username").value.trim();
-    console.log(name);
+    let name = document.getElementById("username").value;
+    let highScore = localStorage.getItem("high-score") || 0;
 
     let jsondata = {
       name: name,
-      highScore: highScore,
+      score: highScore,
     };
 
     let settings = {
