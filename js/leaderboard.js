@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const APIKEY = "65b0b8899eb5badebb7fa256";
+  const url = "https://frontenddev-de90.restdb.io/rest/assignment2leaderboard";
+  const testAPIKEY = "65a3b91cc69bc811d2f5e22b";
+  const testurl =
+    "https://frontenddev-a33c.restdb.io/rest/assignment2leaderboard";
   getData();
 
   document.getElementById("submit").addEventListener("click", function (e) {
@@ -16,20 +20,17 @@ document.addEventListener("DOMContentLoaded", function () {
     let settings = {
       async: true,
       crossDomain: true,
-      url: "https://frontenddev-de90.restdb.io/rest/assignment2leaderboard",
+      url: testurl,
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "x-apikey": APIKEY,
+        "x-apikey": testAPIKEY,
         "cache-control": "no-cache",
       },
       body: JSON.stringify(jsondata),
     };
 
-    fetch(
-      "https://frontenddev-de90.restdb.io/rest/assignment2leaderboard",
-      settings
-    )
+    fetch(testurl, settings)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -43,15 +44,12 @@ document.addEventListener("DOMContentLoaded", function () {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "x-apikey": APIKEY,
+        "x-apikey": testAPIKEY,
         "cache-control": "no-cache",
       },
     };
 
-    fetch(
-      "https://frontenddev-de90.restdb.io/rest/assignment2leaderboard",
-      settings
-    )
+    fetch(testurl, settings)
       .then((response) => response.json())
       .then((response) => {
         response.sort((a, b) => {
@@ -66,10 +64,10 @@ document.addEventListener("DOMContentLoaded", function () {
         let content = "";
         let count = 1;
         for (var i = 0; i < response.length && i < limit; i++) {
-          content += `<tr class="leaderboard-row" id='${response[i]._id}'>
-            <td>${count++}</td>
-            <td>${response[i].name}</td>
-            <td>${response[i].score}</td>
+          content += `<tr id='${response[i]._id}'> 
+            <td>${count++}</td> 
+            <td>${response[i].name}</td> 
+            <td>${response[i].score}</td> 
             </tr>`;
         }
         document.getElementById("leaderboard").innerHTML = content;
