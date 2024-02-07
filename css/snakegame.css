@@ -11,6 +11,18 @@ body{
     min-height: 100vh;
     background-color: #101010;
 }
+.restart-prompt{
+    background-color: black;
+    border: 1px white solid;
+    border-radius: 4px;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    padding: 3% 5%;
+}
+.restart-prompt .row{
+    margin-bottom: 10%;
+}
 .game{
     height: 91vh;
     display: flex;
