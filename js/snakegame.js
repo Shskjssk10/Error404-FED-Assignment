@@ -18,8 +18,8 @@ highScoreElement.innerHTML = `High Score: ${highScore}`;
 let usernameSubmitted = false;
 
 const changeFoodPosition = () => {
-    foodXCoords = Math.floor(Math.random() * 32) + 1;
-    foodYCoords = Math.floor(Math.random() * 30) + 1;
+    foodXCoords = Math.floor(Math.random() * 29) + 1;
+    foodYCoords = Math.floor(Math.random() * 31) + 1;
 }
 
 const handleGameOver = () => {
@@ -102,7 +102,7 @@ const initGame = () => {
     snakeXCoords += snakeVelocityX;
     snakeYCoords += snakeVelocityY;
 
-    if (snakeXCoords <= 0 || snakeXCoords > 32 || snakeYCoords <= 0 || snakeYCoords > 30) {
+    if (snakeXCoords < 0 || snakeXCoords > 32 || snakeYCoords < 0 || snakeYCoords > 31) {
         handleGameOver();
     }
 
