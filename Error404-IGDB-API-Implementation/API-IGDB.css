@@ -1,4 +1,4 @@
-body {
+/* body {
   overflow-x: hidden;
 }
 
@@ -7,11 +7,55 @@ h1 {
 }
 
 .card-wrapper {
-  height: 300px; /* Set the desired height for all cards */
-  width: 350px; /* Set the desired width for all cards */
-  overflow: hidden; /* Prevent content overflow */
+  border: 1px red;
+  height: 300px;
+  width: 350px;
+  overflow: hidden;
 }
 
 .card-body-wrapper {
-  height: 100%; /* Ensure the card body fills the entire card wrapper */
+  height: 100%;
+} */
+.container{
+  margin-top: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 90%;
+}
+.card-container{
+  border: 1px solid white;
+  width: 30%;
+  height: 300px;
+  padding: 1%;
+}
+.second-tier-header{
+  font-size: 0.9vw !important;
+}
+.game-title{
+  height: 16.5%;
+}
+.game-summary{
+  height: 45%;
+  margin: 3% 0;
+}
+.text{
+  font-size: 1.3vw;
+}
+button{
+  border: none;
+  background: none;
+}
+.button {
+  background-color: red;
+  font-size: 1.2vw;
+  padding: 2vh 2.4vw;
+  width: var(--box-width);
+  height: var(--box-height);
+  box-shadow: none !important;
+}
+.button:hover {
+  /* box-shadow: none; */
+  color: white;
+  transform: none !important;
 }
