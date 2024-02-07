@@ -45,13 +45,23 @@ fetch(authUrl, {
           //create card container dynamically
           //create a new div element
           const cardContainer = document.createElement("div");
+          const firstHalfCardContainer = document.createElement("div");
+          const secondHalfCardContainer = document.createElement("div");
+          firstHalfCardContainer.classList.add("first-half");
+          secondHalfCardContainer.classList.add("second-half");
           cardContainer.classList.add("col-lg-4", "col-md-4", "col-sm-4","mb-4", "card-container")
 
           //title from igdb api
           const titleDiv = document.createElement("div");
           titleDiv.classList.add("second-tier-header", "game-title");
-          titleDiv.textContent = game.name;
-          cardContainer.appendChild(titleDiv);
+          const nameText = game.name;
+          const Name =
+            //check is > 150 char
+            nameText.length > 37
+              ? nameText.substring(0, 37) + "..."
+              : nameText;
+              titleDiv.textContent = Name;
+          firstHalfCardContainer.appendChild(titleDiv); 
 
           //content, will store summary
           const sumDiv = document.createElement("div");
@@ -68,7 +78,7 @@ fetch(authUrl, {
               ? summaryText.substring(0, 150) + "..."
               : summaryText;
               sumDiv.textContent = Summary;
-          cardContainer.appendChild(sumDiv);
+          firstHalfCardContainer.appendChild(sumDiv);
 
           //if more than 150 then let user decide is they want to click show more
           if (summaryText.length > 150) {
@@ -84,7 +94,7 @@ fetch(authUrl, {
                 readMoreButton.textContent = "Show More";
               }
             });
-            cardContainer.appendChild(readMoreButton);
+            secondHalfCardContainer.appendChild(readMoreButton);
           }
 
           //button links to igdb website fot the specific game
@@ -93,9 +103,12 @@ fetch(authUrl, {
           const buttonText = document.createElement("div");
           buttonText.textContent = "Find Out More"
           buttonText.classList.add("button", "button-text", "find-out-more-button");
-
           buttonContainer.appendChild(buttonText);
-          cardContainer.appendChild(buttonContainer);
+          
+          secondHalfCardContainer.appendChild(buttonContainer);
+
+          cardContainer.appendChild(firstHalfCardContainer);
+          cardContainer.appendChild(secondHalfCardContainer);
 
           //append to card
           overallContainer.appendChild(cardContainer);

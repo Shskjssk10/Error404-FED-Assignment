@@ -25,22 +25,29 @@ h1 {
 }
 .card-container{
   border: 1px solid white;
+  display: flex;
+  flex-direction: column;
   width: 30%;
   height: 300px;
   padding: 1%;
 }
-.second-tier-header{
+.first-half {
+  height: 80%; 
+  overflow-y: auto;
+}
+.first-half .second-tier-header{
   font-size: 0.9vw !important;
 }
-.game-title{
-  height: 16.5%;
+.first-half .game-title{
+  height: 20%;
 }
-.game-summary{
+.first-half .game-summary{
+  font-size: 1.5vw;
   height: 45%;
   margin: 3% 0;
 }
-.text{
-  font-size: 1.3vw;
+.first-half .text{
+  font-size: 1.5vw !important;
 }
 button{
   border: none;
@@ -58,4 +65,29 @@ button{
   /* box-shadow: none; */
   color: white;
   transform: none !important;
+}
+.find-out-more-button{
+  bottom: 0;
+}
+@media (max-width:1070px){
+  .card-container{
+    height: 200px;
+  }
+}
+@media (max-width:920px){
+  .first-half .second-tier-header{
+    font-size: 1vw !important;
+  }
+  .first-half .text{
+    font-size: 1.8vw !important;
+  }
+}
+@media (max-width: 650px){
+  .card-container .first-half{
+    height: 80%;
+  }
+  .card-container{
+    height: 150px;
+    width: 45%;
+  }
 }
