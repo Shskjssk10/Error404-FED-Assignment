@@ -1,9 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
   const APIKEY = "65b0b8899eb5badebb7fa256";
-  const url = "https://frontenddev-de90.restdb.io/rest/assignment2leaderboard";
-  const testAPIKEY = "65a3b91cc69bc811d2f5e22b";
-  const testurl =
-    "https://frontenddev-a33c.restdb.io/rest/assignment2leaderboard";
   getData();
 
   document.getElementById("submit").addEventListener("click", function (e) {
@@ -20,17 +16,20 @@ document.addEventListener("DOMContentLoaded", function () {
     let settings = {
       async: true,
       crossDomain: true,
-      url: testurl,
+      url: "https://frontenddev-de90.restdb.io/rest/assignment2leaderboard",
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "x-apikey": testAPIKEY,
+        "x-apikey": APIKEY,
         "cache-control": "no-cache",
       },
       body: JSON.stringify(jsondata),
     };
 
-    fetch(testurl, settings)
+    fetch(
+      "https://frontenddev-de90.restdb.io/rest/assignment2leaderboard",
+      settings
+    )
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -44,12 +43,15 @@ document.addEventListener("DOMContentLoaded", function () {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "x-apikey": testAPIKEY,
+        "x-apikey": APIKEY,
         "cache-control": "no-cache",
       },
     };
 
-    fetch(testurl, settings)
+    fetch(
+      "https://frontenddev-de90.restdb.io/rest/assignment2leaderboard",
+      settings
+    )
       .then((response) => response.json())
       .then((response) => {
         response.sort((a, b) => {
@@ -68,10 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
             <td>${count++}</td> 
             <td>${response[i].name}</td> 
             <td>${response[i].score}</td> 
-          content += `<tr class="leaderboard-row" id='${response[i]._id}'>
-            <td class="text">${count++}</td>
-            <td class="text">${response[i].name}</td>
-            <td class="text">${response[i].score}</td>
             </tr>`;
         }
         document.getElementById("leaderboard").innerHTML = content;
