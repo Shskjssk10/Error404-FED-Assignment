@@ -59,7 +59,7 @@ a{
 .review-section{
     display: flex;
     flex-direction: column;
-    margin-top: 5%;
+    margin: 5% 0;
     align-items: center;
 }
 .review-text{
