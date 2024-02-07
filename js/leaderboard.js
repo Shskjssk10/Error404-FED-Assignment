@@ -67,9 +67,9 @@ document.addEventListener("DOMContentLoaded", function () {
         let count = 1;
         for (var i = 0; i < response.length && i < limit; i++) {
           content += `<tr class="leaderboard-row" id='${response[i]._id}'>
-            <td>${count++}</td>
-            <td>${response[i].name}</td>
-            <td>${response[i].score}</td>
+            <td class="text">${count++}</td>
+            <td class="text">${response[i].name}</td>
+            <td class="text">${response[i].score}</td>
             </tr>`;
         }
         document.getElementById("leaderboard").innerHTML = content;
