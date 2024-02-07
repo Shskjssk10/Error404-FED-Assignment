@@ -16,10 +16,10 @@ https://www.figma.com/file/98u1fmfw0utAd8NBSyRPS3/Error404-FED-Assignment?type=d
 
 The following are some features the websites have:
 
-- Filter - Allows for filtering out the single and two-player games. 
-- Instructions page - Allow users to learn the game before playing should they not know 
-- Leaderboard - Allow users to view other top-scoring users to give a sense of competition 
-- Review section - Allow users to send any feedback regarding glitches or bugs, also for any future game recommendations that we can implement. 
+- Instructions page - Allow users to learn the game before playing should they not know
+- Leaderboard - Allow users to view other top-scoring users to give a sense of competition
+- Review section - Allow users to send any feedback regarding glitches or bugs, also for any future game recommendations that we can implement
+- Games database - Showcase the other games that users might find interesting and take them to the page to find out more about the game
 
 Some additional features we could also implement are: 
 - Allow for users to play 2 player games on different devices 
@@ -30,7 +30,8 @@ Some additional features we could also implement are:
 - CSS3
 - Bootstrap Framework 
 - Vanilla JS
-- RestDB 
+- RestDB
+- Node JS
 
 ## Testing 
 
