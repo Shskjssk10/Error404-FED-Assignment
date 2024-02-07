@@ -33,6 +33,32 @@
     justify-content: center;
     align-items: center;
 }
+.filter{
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 70%;
+}
+.filter input{
+    margin-top: 0 !important;
+    padding: 1.5% !important;
+    font-size: 1.3vw;
+}
+#search{
+    height: 100%;
+    width: 70%;
+}
+.filter .dropdown-filter{
+    font-family: 'Atlantis International';
+    font-size: 1.3vw;
+}
+.filter .search-button{
+    box-shadow: none !important;
+}
+.filter .search-button:hover{
+    transform: none !important;
+}
 .row{
     width: 70%;
     margin: 3% 0%;
