@@ -5,6 +5,9 @@ const controls = document.querySelectorAll(".controls i");
 const coverPrompt = document.querySelector(".cover");
 const submitButton = document.querySelector(".submit-button");
 
+const restartPrompt = document.querySelector(".restart-prompt");
+const restartButton = document.querySelector(".restart-button");
+
 let gameOver = false;
 let foodXCoords, foodYCoords;
 let snakeXCoords = 16, snakeYCoords = 16;
@@ -25,11 +28,16 @@ const changeFoodPosition = () => {
 const handleGameOver = () => {
     if (!gameOver) {
         gameOver = true;
-        alert("Game over! Press OK to replay!");
-        clearInterval(setIntervalId);
-        resetGame();
-        startGame();
-        gameOver = false;
+        console.log("game has ended!");
+        restartPrompt.style.display = "flex";
+        restartButton.addEventListener("click", function(){
+            console.log("button has been clicked.")
+            restartPrompt.style.display = "none";
+            clearInterval(setIntervalId);
+            resetGame();
+            startGame();
+            gameOver = false;
+        })
     }
 }
 
@@ -102,12 +110,15 @@ const initGame = () => {
     snakeXCoords += snakeVelocityX;
     snakeYCoords += snakeVelocityY;
 
-    if (snakeXCoords < 0 || snakeXCoords > 32 || snakeYCoords < 0 || snakeYCoords > 31) {
+    if (snakeXCoords < 1 || snakeXCoords >= 32 || snakeYCoords < 1 || snakeYCoords >= 30) {
         handleGameOver();
     }
 
     for (let i = 0; i < snakeBody.length; i++) {
-        htmlMarkup += `<div class="snake" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}"></div>`;
+        if (i === 0 || (i !== 0 && snakeBody[i])) {
+            htmlMarkup += `<div class="snake" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}"></div>`;
+        }
+    
         if (i !== 0 && snakeBody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[i][0]) {
             handleGameOver();
         }
