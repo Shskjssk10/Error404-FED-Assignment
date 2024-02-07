@@ -47,6 +47,13 @@ header ul li{
   text-decoration: none;
   padding: 20px 25px;
 }
+header ul li a{
+  color: white;
+}
+header ul li a:hover{
+  color: rgb(68, 68, 68);
+  transition: 0.4s;
+}
 header .github-container{
   margin-top: 2%;
   padding: 0;

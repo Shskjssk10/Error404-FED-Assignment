@@ -1,0 +1,15 @@
+body {
+  text-align: center;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 91vh;
+}
+#board {
+  width: 65%;
+  background-color: black;
+  border: 3px rgb(170, 170, 170) solid;
+  margin-top: 20px;
+}
