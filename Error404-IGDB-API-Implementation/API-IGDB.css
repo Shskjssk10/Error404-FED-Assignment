@@ -5,3 +5,13 @@ body {
 h1 {
   text-align: center;
 }
+
+.card-wrapper {
+  height: 300px; /* Set the desired height for all cards */
+  width: 350px; /* Set the desired width for all cards */
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.card-body-wrapper {
+  height: 100%; /* Ensure the card body fills the entire card wrapper */
+}

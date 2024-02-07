@@ -3,7 +3,7 @@ const clientID = "r3auekm7tcozzfu1pi7xpv2cl7kqzt";
 const clientSecret = "6w7djtd2t5fqom1fy20yui0yh1ae4l";
 let accessToken;
 const authUrl = `https://id.twitch.tv/oauth2/token`;
-const serverUrl = "http://localhost:1010/getGames";
+const serverUrl = "http://localhost:8081/getGames";
 
 fetch(authUrl, {
   method: "POST",
@@ -45,11 +45,11 @@ fetch(authUrl, {
           //create bs card dynamically
           //create a new div element
           const cardDiv = document.createElement("div");
-          cardDiv.classList.add("col-md-4", "mb-4");
+          cardDiv.classList.add("col-md-4", "mb-4", "card-wrapper");
 
           //create card
           const cardBodyDiv = document.createElement("div");
-          cardBodyDiv.classList.add("card", "h-100");
+          cardBodyDiv.classList.add("card", "h-100", "card-body-wrapper");
 
           //title from igdb api
           const title = document.createElement("h5");

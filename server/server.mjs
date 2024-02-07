@@ -2,13 +2,13 @@ import express from "express";
 import fetch from "node-fetch";
 
 const app = express();
-const port = 1010;
+const port = 8081;
 const clientID = "r3auekm7tcozzfu1pi7xpv2cl7kqzt";
 
 app.use(express.json());
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:3000/"); // change the link to gihub deployment link
+  res.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:3000");
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET, POST, OPTIONS, PUT, PATCH, DELETE"
@@ -28,7 +28,7 @@ app.post("/getGames", async (req, res) => {
         "Client-ID": clientID,
         Authorization: `Bearer ${accessToken}`,
       },
-      body: "fields name,summary,url; limit 498;",
+      body: "fields name,summary,url,screenshots; limit 30;",
     });
 
     if (response.ok) {
@@ -37,6 +37,7 @@ app.post("/getGames", async (req, res) => {
         name: game.name,
         summary: game.summary,
         url: game.url,
+        screenshot: game.screenshots,
       }));
       res.json(games);
     } else {
