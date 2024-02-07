@@ -5,6 +5,7 @@
   font-family: "Open Sans", sans-serif;
 }
 body {
+  overflow-y: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,8 +25,8 @@ body {
   margin-bottom: 10%;
 }
 .game {
-  height: 91vh;
-  display: flex;
+  margin-top: 2%;
+  display: none;
   justify-content: center;
   align-items: center;
 }
@@ -126,8 +127,11 @@ body {
   font-size: 1.3vw;
   width: calc(100% / 4);
 }
-
 .game {
   display: flex;
   flex-direction: column;
+}
+.leaderboard-row td{
+  background: none;
+  text-decoration: none;
 }

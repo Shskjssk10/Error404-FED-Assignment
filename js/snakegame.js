@@ -3,6 +3,7 @@ const scoreElement = document.querySelector(".score");
 const highScoreElement = document.querySelector(".high-score");
 const controls = document.querySelectorAll(".controls i");
 const coverPrompt = document.querySelector(".cover");
+const gameSection = document.querySelector(".game");
 const submitButton = document.querySelector(".submit-button");
 
 const restartPrompt = document.querySelector(".restart-prompt");
@@ -148,6 +149,9 @@ const initGame = () => {
 const handleCoverDisappearance = () => {
   usernameSubmitted = true;
   coverPrompt.style.display = "none";
+  gameSection.style.display = "flex";
+  document.body.style.overflowY = "scroll";
+  console.log("hello");
   resetGame();
   startGame();
 };
