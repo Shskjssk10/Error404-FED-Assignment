@@ -49,22 +49,22 @@ const changeDirection = (e) => {
     return;
   }
 
-  if ((e.key === "ArrowUp" || e.key === "w") && snakeVelocityY !== 1) {
+  if (e.key === "w" && snakeVelocityY !== 1) {
     snakeVelocityX = 0;
     snakeVelocityY = -1;
   } else if (
-    (e.key === "ArrowDown" || e.key === "s") &&
+    e.key === "s" &&
     snakeVelocityY !== -1
   ) {
     snakeVelocityX = 0;
     snakeVelocityY = 1;
   } else if (
-    (e.key === "ArrowRight" || e.key === "d") &&
+    e.key === "d" &&
     snakeVelocityX !== -1
   ) {
     snakeVelocityX = 1;
     snakeVelocityY = 0;
-  } else if ((e.key === "ArrowLeft" || e.key === "a") && snakeVelocityX !== 1) {
+  } else if (e.key === "a" && snakeVelocityX !== 1) {
     snakeVelocityX = -1;
     snakeVelocityY = 0;
   }
