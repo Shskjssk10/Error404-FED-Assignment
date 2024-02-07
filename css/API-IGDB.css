@@ -16,6 +16,9 @@ h1 {
 .card-body-wrapper {
   height: 100%;
 } */
+.first-tier-header{
+  margin-top: 2%;
+}
 .container{
   margin-top: 2%;
   display: flex;
