@@ -3,7 +3,7 @@ const clientID = "r3auekm7tcozzfu1pi7xpv2cl7kqzt";
 const clientSecret = "6w7djtd2t5fqom1fy20yui0yh1ae4l";
 let accessToken;
 const authUrl = `https://id.twitch.tv/oauth2/token`;
-const serverUrl = "http://localhost:1115/getGames";
+const serverUrl = "http://localhost:1111/getGames";
 
 fetch(authUrl, {
   method: "POST",
@@ -49,7 +49,13 @@ fetch(authUrl, {
           const secondHalfCardContainer = document.createElement("div");
           firstHalfCardContainer.classList.add("first-half");
           secondHalfCardContainer.classList.add("second-half");
-          cardContainer.classList.add("col-lg-4", "col-md-4", "col-sm-4","mb-4", "card-container")
+          cardContainer.classList.add(
+            "col-lg-4",
+            "col-md-4",
+            "col-sm-4",
+            "mb-4",
+            "card-container"
+          );
 
           //title from igdb api
           const titleDiv = document.createElement("div");
@@ -57,11 +63,9 @@ fetch(authUrl, {
           const nameText = game.name;
           const Name =
             //check is > 150 char
-            nameText.length > 37
-              ? nameText.substring(0, 37) + "..."
-              : nameText;
-              titleDiv.textContent = Name;
-          firstHalfCardContainer.appendChild(titleDiv); 
+            nameText.length > 37 ? nameText.substring(0, 37) + "..." : nameText;
+          titleDiv.textContent = Name;
+          firstHalfCardContainer.appendChild(titleDiv);
 
           //content, will store summary
           const sumDiv = document.createElement("div");
@@ -77,7 +81,7 @@ fetch(authUrl, {
             summaryText.length > 150
               ? summaryText.substring(0, 150) + "..."
               : summaryText;
-              sumDiv.textContent = Summary;
+          sumDiv.textContent = Summary;
           firstHalfCardContainer.appendChild(sumDiv);
 
           //if more than 150 then let user decide is they want to click show more
@@ -101,10 +105,14 @@ fetch(authUrl, {
           const buttonContainer = document.createElement("a");
           buttonContainer.href = game.url;
           const buttonText = document.createElement("div");
-          buttonText.textContent = "Find Out More"
-          buttonText.classList.add("button", "button-text", "find-out-more-button");
+          buttonText.textContent = "Find Out More";
+          buttonText.classList.add(
+            "button",
+            "button-text",
+            "find-out-more-button"
+          );
           buttonContainer.appendChild(buttonText);
-          
+
           secondHalfCardContainer.appendChild(buttonContainer);
 
           cardContainer.appendChild(firstHalfCardContainer);
