@@ -2,7 +2,7 @@
 
 Create a website where users can come to play retro arcade games when they are bored, whether is it while waiting for lessons in a library or drinking coffee in a cafe. 
 
-The website will have 4 games: Donkey Kong, Pac Man , Snake Game and Pong Game, where Pong Game will be a 2 player game. Each game will have an instructions page and a page for the user to play. There will also be a leaderboard featured to show the highest scoring players of the website.
+The website will have 2 games: Snake Game and Pong Game, where Pong Game will be a 2 player game. Each game will have an instructions page and a page for the user to play. There will also be a leaderboard featured to show the highest scoring players of the website.
 
 ## Design Process
 
@@ -16,10 +16,10 @@ https://www.figma.com/file/98u1fmfw0utAd8NBSyRPS3/Error404-FED-Assignment?type=d
 
 The following are some features the websites have:
 
-- Filter - Allows for filtering out the single and two-player games. 
-- Instructions page - Allow users to learn the game before playing should they not know 
-- Leaderboard - Allow users to view other top-scoring users to give a sense of competition 
-- Review section - Allow users to send any feedback regarding glitches or bugs, also for any future game recommendations that we can implement. 
+- Instructions page - Allow users to learn the game before playing should they not know
+- Leaderboard - Allow users to view other top-scoring users to give a sense of competition
+- Review section - Allow users to send any feedback regarding glitches or bugs, also for any future game recommendations that we can implement
+- Games database - Showcase the other games that users might find interesting and take them to the page to find out more about the game
 
 Some additional features we could also implement are: 
 - Allow for users to play 2 player games on different devices 
@@ -30,7 +30,8 @@ Some additional features we could also implement are:
 - CSS3
 - Bootstrap Framework 
 - Vanilla JS
-- RestDB 
+- RestDB
+- Node JS
 
 ## Testing 
 
