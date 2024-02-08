@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var searchMatch = (rowName.includes(search));
   
         if (categoryMatch && searchMatch) {
-          row.style.display = 'block';
+          row.style.display = 'flex';
         } else {
           row.style.display = 'none';
         }
