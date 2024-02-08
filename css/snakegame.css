@@ -132,15 +132,37 @@ body {
   flex-direction: column;
 }
 .leaderboard-header th {
+  width: 100%;
   background: none;
   border-bottom: none;
   color: white;
   font-size: 2.5vw !important;
 }
+.leaderboard-header .rank{
+  width: 10%;
+}
+.leaderboard-header .name{
+  width: 45%;
+}
+.leaderboard-header .score{
+  width: 45%;
+}
 .leaderboard-row td {
-  background: none;
   text-decoration-color: black !important;
-  border-bottom: none;
-  color: white;
+  border-bottom: 1px solid black;
+  font-family: 'Atlantis International';
   font-size: 2.5vw !important;
+}
+.leaderboard-row > *{
+  border: 1px solid black;
+  text-align: left;
+}
+.leaderboard-row .rank{
+  width: 10% !important;
+}
+.leaderboard-row .name{
+  width: 45% !important;
+}
+.leaderboard-row .score{
+  width: 45% !important;
 }
