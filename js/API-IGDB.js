@@ -3,7 +3,7 @@ const clientID = "r3auekm7tcozzfu1pi7xpv2cl7kqzt";
 const clientSecret = "6w7djtd2t5fqom1fy20yui0yh1ae4l";
 let accessToken;
 const authUrl = `https://id.twitch.tv/oauth2/token`;
-const serverUrl = "http://localhost:1111/getGames";
+const serverUrl = "http://localhost:8181/getGames";
 
 fetch(authUrl, {
   method: "POST",

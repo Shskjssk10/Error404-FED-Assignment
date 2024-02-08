@@ -2,13 +2,16 @@ import express from "express";
 import fetch from "node-fetch";
 
 const app = express();
-const port = 1111;
+const port = 8181;
 const clientID = "r3auekm7tcozzfu1pi7xpv2cl7kqzt";
 
 app.use(express.json());
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:3000");
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://shskjssk10.github.io/Error404-FED-Assignment/"
+  );
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET, POST, OPTIONS, PUT, PATCH, DELETE"
