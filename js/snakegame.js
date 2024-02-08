@@ -29,9 +29,41 @@ const changeFoodPosition = () => {
 };
 
 const handleGameOver = () => {
+  const testurl = "https://feddddd-6882.restdb.io/rest/assignment2leaderboard";
+  const testapikey = "65c4358c86354f3586464a0d";
   if (!gameOver) {
     gameOver = true;
     console.log("game has ended!");
+
+    // Post score to the server
+    if (usernameSubmitted) {
+      const postData = {
+        name: document.getElementById("username").value,
+        score: score,
+      };
+
+      const settings = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-apikey": testapikey, // Assuming you have the testapikey defined
+          "cache-control": "no-cache",
+        },
+        body: JSON.stringify(postData),
+      };
+
+      fetch(testurl, settings)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Score posted successfully:", data);
+          // Optionally, you can handle success response here
+        })
+        .catch((error) => {
+          console.error("Error posting score:", error);
+          // Optionally, you can handle error here
+        });
+    }
+
     restartPrompt.style.display = "flex";
     restartButton.addEventListener("click", function () {
       console.log("button has been clicked.");

@@ -131,13 +131,13 @@ body {
   display: flex;
   flex-direction: column;
 }
-.leaderboard-header th{
+.leaderboard-header th {
   background: none;
   border-bottom: none;
   color: white;
   font-size: 2.5vw !important;
 }
-.leaderboard-row td{
+.leaderboard-row td {
   background: none;
   text-decoration-color: black !important;
   border-bottom: none;

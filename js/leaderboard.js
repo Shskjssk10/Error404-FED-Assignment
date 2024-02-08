@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const testurl =
-    "https://frontenddevv-762e.restdb.io/rest/assignment2leaderboard";
-  const testapikey = "65c3986cc4f5c238de12400c";
+  const testurl = "https://feddddd-6882.restdb.io/rest/assignment2leaderboard";
+  const testapikey = "65c4358c86354f3586464a0d";
 
   getData();
 
@@ -9,34 +8,48 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
 
     let name = document.getElementById("username").value;
-    let highScore = localStorage.getItem("high-score") || 0;
+    let highScore = localStorage.getItem("high-score");
 
-    // Reset local storage for high score whenever a new name is entered
-    localStorage.removeItem("high-score");
+    // Check if the user has entered a name and a score
+    if (name && highScore > 0) {
+      // Check and update high score if necessary
+      getHighScore(name, highScore);
 
-    let jsondata = {
-      name: name,
-      score: highScore,
-    };
+      // Reset local storage for high score only if it's a new name
+      let existingData =
+        JSON.parse(localStorage.getItem("high-score-data")) || {};
+      if (!existingData[name]) {
+        localStorage.removeItem("high-score");
+      }
 
-    let settings = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-apikey": testapikey,
-        "cache-control": "no-cache",
-      },
-      body: JSON.stringify(jsondata),
-    };
+      let jsondata = {
+        name: name,
+        score: highScore,
+      };
 
-    fetch(testurl, settings)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        document.getElementById("submit").disabled = false;
-        getData(); // Refresh leaderboard after posting data
-        getHighScore(name, highScore); // Check and update high score if necessary
-      });
+      let settings = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-apikey": testapikey,
+          "cache-control": "no-cache",
+        },
+        body: JSON.stringify(jsondata),
+      };
+
+      fetch(testurl, settings)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          document.getElementById("submit").disabled = false;
+          // Refresh leaderboard after posting data
+          getData();
+        })
+        .catch((error) => console.error("Error posting score: ", error));
+    } else {
+      // Handle case where user hasn't played the game yet
+      console.log("Please play the game before submitting your score.");
+    }
   });
 
   function getHighScore(name, highScore) {
@@ -69,9 +82,13 @@ document.addEventListener("DOMContentLoaded", function () {
             .then((response) => response.json())
             .then((updatedData) => {
               console.log("Score updated in database: ", updatedData);
-              getData(); // Update leaderboard after score update
+              getData();
             })
-            .catch((error) => console.error("Error updating score: ", error));
+            .catch((error) => console.error("Error updating score: ", error))
+            .then(() => {
+              // Update leaderboard after score update
+              getData();
+            });
         }
       });
   }
@@ -115,11 +132,11 @@ document.addEventListener("DOMContentLoaded", function () {
         let content = "";
         let count = 1;
         for (let i = 0; i < uniqueUserScores.length && i < limit; i++) {
-          content += `<tr> 
-            <td>${count++}</td> 
-            <td>${uniqueUserScores[i].name}</td> 
-            <td>${uniqueUserScores[i].score}</td> 
-            </tr>`;
+          content += `<tr class="leaderboard-row"> 
+              <td>${count++}</td> 
+              <td>${uniqueUserScores[i].name}</td> 
+              <td>${uniqueUserScores[i].score}</td> 
+              </tr>`;
         }
         document.getElementById("leaderboard").innerHTML = content;
       });
