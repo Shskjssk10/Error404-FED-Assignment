@@ -38,9 +38,6 @@ Some additional features we could also implement are:
 ## Video Pitch
 - https://connectnpedu.sharepoint.com/sites/NPVideos/_layouts/15/stream.aspx?id=%2Fsites%2FNPVideos%2FShared%20Documents%2FGeneral%2FRecordings%2FNew%20channel%20meeting%2D20240208%5F122320%2DMeeting%20Recording%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview
 
-## Testing 
-- 
 
-## Credits 
 
 
